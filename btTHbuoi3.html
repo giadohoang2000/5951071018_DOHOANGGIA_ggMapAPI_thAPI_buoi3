@@ -53,12 +53,13 @@
                     content: BuuDienInfo,
                     position: BuuDienMarker.getPosition()
                 });
-
+                
+                //Bưu điện - hình tròn
                 const BuuDienCircle = new google.maps.Circle({
-                    strokeColor: "#FF0000",
+                    strokeColor: "#00FFFF",
                     strokeOpacity: 0.8,
                     strokeWeight: 2,
-                    fillColor: "#FF0000",
+                    fillColor: "#00FFFF",
                     fillOpacity: 0.35,
                     map,
                     center: BuuDien,
@@ -69,32 +70,32 @@
                     myInfoWindow.open(map, BuuDienMarker);
                 });
 
-                // Bưu điện - hình tam giác đều nội tiếp đường tròn này
+                // Bưu điện - hình tam giác đều ngoại tiếp đường tròn này
                 var BDNnT1 = google.maps.geometry.spherical.computeOffset(BuuDienPoint, OutTriangleEdge, 0);
                 var BDNnT2 = google.maps.geometry.spherical.computeOffset(BuuDienPoint, OutTriangleEdge, 120);
                 var BDNnT3 = google.maps.geometry.spherical.computeOffset(BuuDienPoint, OutTriangleEdge, -120);
                 var BDNnT = [BDNnT1, BDNnT2, BDNnT3];
                 const TGBDNnT = new google.maps.Polygon({
                     path: BDNnT,
-                    strokeColor: '#FFFF00',
+                    strokeColor: '#FF33FF',
                     strokeOpacity: 0.8,
                     strokeWeight: 2,
-                    fillColor: '#FFFF00',
+                    fillColor: '#FF33FF',
                     fillOpacity: 0.35
                 });
                 TGBDNnT.setMap(map);
 
-                // Bưu điện - hình tam giác ngoại tiếp đường tròn trên
+                // Bưu điện - hình tam giác nội tiếp đường tròn trên
                 var BDNT1 = google.maps.geometry.spherical.computeOffset(BuuDienPoint, radius, 0);
                 var BDNT2 = google.maps.geometry.spherical.computeOffset(BuuDienPoint, radius, 120);
                 var BDNT3 = google.maps.geometry.spherical.computeOffset(BuuDienPoint, radius, -120);
                 var BDNT = [BDNT1, BDNT2, BDNT3];
                 const TGBDNT = new google.maps.Polygon({
                     path: BDNT,
-                    strokeColor: '#F168Fa',
+                    strokeColor: '#00EE00',
                     strokeOpacity: 0.8,
                     strokeWeight: 2,
-                    fillColor: '#F168Fa',
+                    fillColor: '#FF33FF',
                     fillOpacity: 0.35
                 });
                 TGBDNT.setMap(map);
@@ -121,11 +122,12 @@
                     VanMieuinfoWindow.open(map, VanMieuMaker);
                 });
 
+                // Văn Miếu - hình tròn
                 const VanMieuCircle = new google.maps.Circle({
-                    strokeColor: "#FF0000",
+                    strokeColor: "#00FFFF",
                     strokeOpacity: 0.8,
                     strokeWeight: 2,
-                    fillColor: "#FF0000",
+                    fillColor: "#00FFFF",
                     fillOpacity: 0.35,
                     map,
                     center: VanMieu,
@@ -139,10 +141,10 @@
                 var VMNnT = [VMNnT1, VMNnT2, VMNnT3];
                 const TGVMNnT = new google.maps.Polygon({
                     path: VMNnT,
-                    strokeColor: '#FFFF00',
+                    strokeColor: '#FF33FF',
                     strokeOpacity: 0.8,
                     strokeWeight: 2,
-                    fillColor: '#FFFF00',
+                    fillColor: '#FF33FF',
                     fillOpacity: 0.35
                 });
                 TGVMNnT.setMap(map);
@@ -154,10 +156,10 @@
                 var VMNT = [VMNT1, VMNT2, VMNT3];
                 const TGVMNT = new google.maps.Polygon({
                     path: VMNT,
-                    strokeColor: '#F168Fa',
+                    strokeColor: '#FF33FF',
                     strokeOpacity: 0.8,
                     strokeWeight: 2,
-                    fillColor: '#F168Fa',
+                    fillColor: '#FF33FF',
                     fillOpacity: 0.35
                 });
                 TGVMNT.setMap(map);
@@ -189,5 +191,4 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=geometry&v=weekly"
         async></script>
-        <!-- Key private nên tự tạo hoặc lụm đâu đó để test nha  -->
 </html>
